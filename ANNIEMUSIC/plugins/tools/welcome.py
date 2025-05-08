@@ -108,7 +108,7 @@ def welcomepic(pic, user, chatname, id, uname, brightness_factor=1.3):
     pfp = circle(pfp, brightness_factor=brightness_factor) 
     pfp = pfp.resize((385, 385))
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype('ANNIEMUSIC/assets/font.ttf', size=110)
+    font = ImageFont.truetype('ANNIEMUSIC/assets/font.ttf', size=100)
     welcome_font = ImageFont.truetype('ANNIEMUSIC/assets/font.ttf', size=61)
     
     draw.text((320, 640), f'{user}', fill=(34, 34, 34), font=font)
@@ -116,7 +116,7 @@ def welcomepic(pic, user, chatname, id, uname, brightness_factor=1.3):
     draw.text((210, 860), f'{id}', fill=(34, 34, 34), font=font)
 
     #
-    pfp_position = (162, 161)
+    pfp_position = (102, 215)
     background.paste(pfp, pfp_position, pfp)
     background.save(f"downloads/welcome#{id}.png")
     return f"downloads/welcome#{id}.png"
