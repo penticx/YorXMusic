@@ -108,8 +108,8 @@ def welcomepic(pic, user, chatname, id, uname, brightness_factor=1.3):
     pfp = circle(pfp, brightness_factor=brightness_factor) 
     pfp = pfp.resize((385, 385))
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype('ANNIEMUSIC/assets/font.ttf', size=100)
-    welcome_font = ImageFont.truetype('ANNIEMUSIC/assets/font.ttf', size=61)
+    font = ImageFont.truetype('ANNIEMUSIC/assets/bl.ttf', size=100)
+    welcome_font = ImageFont.truetype('ANNIEMUSIC/assets/bl.ttf', size=61)
     
     draw.text((320, 640), f'{user}', fill=(34, 34, 34), font=font)
     draw.text((400, 750), f"@{uname}", fill=(34, 34, 34), font=font)
