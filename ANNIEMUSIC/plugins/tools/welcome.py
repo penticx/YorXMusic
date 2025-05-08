@@ -1,5 +1,6 @@
-#andi mandi jo iske niche wala line change/remove kiya uski ... 🤣
+# Don't Remove/Edit This Line 👇
 # Created By - @ProBotts || @ZeoXpro
+
 
 from ANNIEMUSIC import app
 from pyrogram.errors import RPCError
@@ -52,15 +53,8 @@ from pyrogram.errors import (
 )
 from ANNIEMUSIC.utils.database import get_assistant, is_active_chat
 
+from config import OWNER_ID
 
-
-random_photo = [
-    "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
-    "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
-    "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
-    "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
-    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg",
-]
 # --------------------------------------------------------------------------------- #
 
 
@@ -109,20 +103,20 @@ def circle(pfp, size=(500, 500), brightness_factor=10):
     return pfp
 
 def welcomepic(pic, user, chatname, id, uname, brightness_factor=1.3):
-    background = Image.open("ANNIEMUSIC/assets/welc4.png")
+    background = Image.open("ANNIEMUSIC/assets/wel_pro.jpg")
     pfp = Image.open(pic).convert("RGBA")
     pfp = circle(pfp, brightness_factor=brightness_factor) 
-    pfp = pfp.resize((325, 325))
+    pfp = pfp.resize((385, 385))
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype('ANNIEMUSIC/assets/font.ttf', size=50)
+    font = ImageFont.truetype('ANNIEMUSIC/assets/font.ttf', size=110)
     welcome_font = ImageFont.truetype('ANNIEMUSIC/assets/font.ttf', size=61)
     
-    draw.text((520, 500), f'{user}', fill=(255, 255, 255), font=font)
-    draw.text((485, 560), f'{id}', fill=(255, 255, 255), font=font)
-    draw.text((565, 630), f"@{uname}", fill=(255, 255, 255), font=font)
+    draw.text((320, 640), f'{user}', fill=(34, 34, 34), font=font)
+    draw.text((400, 750), f"@{uname}", fill=(34, 34, 34), font=font)
+    draw.text((210, 860), f'{id}', fill=(34, 34, 34), font=font)
 
     #
-    pfp_position = (105, 120)
+    pfp_position = (162, 161)
     background.paste(pfp, pfp_position, pfp)
     background.save(f"downloads/welcome#{id}.png")
     return f"downloads/welcome#{id}.png"
@@ -165,20 +159,22 @@ async def greet_new_member(_, member: ChatMemberUpdated):
     chat_id = member.chat.id
     count = await app.get_chat_members_count(chat_id)
     A = await wlcm.find_one(chat_id)
-    if A:
-        return
 
     user = member.new_chat_member.user if member.new_chat_member else member.from_user
-    
+
     # Add the modified condition here
     if member.new_chat_member and not member.old_chat_member and member.new_chat_member.status != "kicked":
-    
+
+        if A:
+            return
+
+        #other users
         try:
             pic = await app.download_media(
                 user.photo.big_file_id, file_name=f"pp{user.id}.png"
             )
         except AttributeError:
-            pic = "ANNIEMUSIC/assets/upic.png"
+            pic = "PROMUSIC/assets/upic.png"
         if (temp.MELCOW).get(f"welcome-{member.chat.id}") is not None:
             try:
                 await temp.MELCOW[f"welcome-{member.chat.id}"].delete()
@@ -215,5 +211,5 @@ async def greet_new_member(_, member: ChatMemberUpdated):
         except Exception as e:
             LOGGER.error(e)
 
-# removed
-# Created By - SexyBhai|| MeraUsername 
+# Don't Remove/Edit This Line 👇
+# Created By - @ProBotts || @ZeoXpro
