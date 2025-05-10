@@ -25,6 +25,10 @@ GPT_API = getenv("GPT_API")
 DEEP_API = getenv("DEEP_API")
 OWNER_ID = int(getenv("OWNER_ID", 6209871909))
 
+API_URL = getenv("API_URL", 'https://api.thequickearn.xyz') #youtube song url
+API_KEY = getenv("API_KEY", None) # youtube song api key, get it from https://t.me/RahulTC
+
+
 # Heroku deployment settings - Refer to Heroku documentation on how to obtain these
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
