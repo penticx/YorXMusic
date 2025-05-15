@@ -26,7 +26,7 @@ DEEP_API = getenv("DEEP_API")
 OWNER_ID = int(getenv("OWNER_ID", 6209871909))
 
 API_URL = getenv("API_URL", 'https://api.thequickearn.xyz') #youtube song url
-API_KEY = getenv("API_KEY", "30DxNexGenBots7fG9kL") # youtube song api key, get it from https://t.me/RahulTC
+API_KEY = getenv("API_KEY", "NxGBNexGenBotsd22d66") # youtube song api key, get it from https://t.me/RahulTC
 
 
 # Heroku deployment settings - Refer to Heroku documentation on how to obtain these
